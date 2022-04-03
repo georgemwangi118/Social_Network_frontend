@@ -30,7 +30,7 @@ export const update = (userId, token, user) => {
 };
 
 export const remove = (userId, token) => {
-  return fetch(`https://letsconnet.herokuapp.com/user/${userId}`, {
+  return fetch(`${process.env.REACT_APP_API_URL}/user/${userId}`, {
     method: "DELETE",
     headers: {
       Accept: "application/json",
@@ -45,7 +45,7 @@ export const remove = (userId, token) => {
 };
 
 export const list = () => {
-  return fetch("https://letsconnet.herokuapp.com/users", {
+  return fetch(`${process.env.REACT_APP_API_URL}/user`, {
     method: "GET",
   })
     .then((response) => {
@@ -66,7 +66,7 @@ export const updateUser = (user, next) => {
 };
 
 export const follow = (userId, token, followId) => {
-  return fetch("https://letsconnet.herokuapp.com/user/follow", {
+  return fetch(`${process.env.REACT_APP_API_URL}/user/follow`, {
     method: "PUT",
     headers: {
       Accept: "application/json",
@@ -82,7 +82,7 @@ export const follow = (userId, token, followId) => {
 };
 
 export const unfollow = (userId, token, unfollowId) => {
-  return fetch("https://letsconnet.herokuapp.com/user/unfollow", {
+  return fetch(`${process.env.REACT_APP_API_URL}/user/unfollow`, {
     method: "PUT",
     headers: {
       Accept: "application/json",
@@ -98,7 +98,7 @@ export const unfollow = (userId, token, unfollowId) => {
 };
 
 export const findPeople = (userId, token) => {
-  return fetch(`https://letsconnet.herokuapp.com/user/findpeople/${userId}`, {
+  return fetch(`${process.env.REACT_APP_API_URL}/user/findpeople${userId}`, {
     method: "GET",
     headers: {
       Accept: "application/json",
